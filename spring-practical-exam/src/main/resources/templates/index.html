@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+</head>
+<body>
+<form action="#" th:action="@{/create-employee}" th:object="${employeeEntity}" method="post">
+    <input type="text" th:field="*{name}" placeholder="Enter employee's name"/>
+    <input type="number" th:field="*{age}" placeholder="Enter employee's age"/>
+    <button type="submit">Add new employee</button>
+</form>
+<div th:each="employee:${allEmployee}">
+    <span th:text="${employee.name}"></span>
+    <span th:text="${employee.age}"></span>
+    <a th:href="@{/delete-employee/{id}(id = ${employee.id})}">Delete student</a>
+</div>
+</body>
+</html>
