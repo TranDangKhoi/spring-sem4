@@ -73,7 +73,7 @@ button {
     padding: 5px 10px;
     margin-top: 5px;
     width: 200px;
-    height:60px;
+    height:40px;
 }
 
 .container {
@@ -83,7 +83,7 @@ button {
 }
 
 .table {
-    margin: 60px auto;
+    margin: 10px auto;
     width: 100%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
