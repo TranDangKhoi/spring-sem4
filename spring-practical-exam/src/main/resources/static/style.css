@@ -1,0 +1,114 @@
+:root{
+    --primary : #17594A;
+    --slate: #677586;
+    --blue: #2565EC;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+input,
+select,
+textarea {
+    background-color: transparent;
+    outline: none;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+}
+body {
+    min-height: 100vh;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input {
+    display: block;
+    border-radius: 8px;
+    border: 2px solid var(--slate);
+    outline:none;
+    padding: 5px 10px;
+    width: 200px;
+}
+
+input:focus {
+    border: 2px solid var(--blue);
+}
+
+button {
+    outline:none;
+    background: var(--blue);
+    border-radius: 8px;
+    color:white;
+    font-weight: 500;
+    padding: 5px 10px;
+    margin-top: 5px;
+    width: 200px;
+    height:60px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.table {
+    margin: 60px auto;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.table thead {
+    background: var(--primary);
+    padding: 20px 30px;
+    color: white;
+    text-align:center;
+}
+
+.table thead tr {
+    padding: 20px 30px;
+    font-size: 16px;
+}
+
+.table thead tr th {
+    padding: 20px 30px;
+    font-size: 16px;
+}
+
+.table tbody tr td {
+    text-align:center;
+    font-size: 16px;
+    padding: 20px 30px;
+    font-size: 16px;
+}

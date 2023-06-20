@@ -4,18 +4,43 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}"/>
     <title>Document</title>
 </head>
 <body>
-<form action="#" th:action="@{/create-employee}" th:object="${employeeEntity}" method="post">
-    <input type="text" th:field="*{name}" placeholder="Enter employee's name"/>
-    <input type="number" th:field="*{age}" placeholder="Enter employee's age"/>
-    <button type="submit">Add new employee</button>
-</form>
-<div th:each="employee:${allEmployee}">
-    <span th:text="${employee.name}"></span>
-    <span th:text="${employee.age}"></span>
-    <a th:href="@{/delete-employee/{id}(id = ${employee.id})}">Delete student</a>
+<div class="container">
+    <form action="#" th:action="@{/create-employee}" th:object="${employeeEntity}" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" th:field="*{name}" placeholder="Enter employee's name"/>
+        <label for="age">Age</label>
+        <input type="number" id="age" th:field="*{age}" placeholder="Enter employee's age"/>
+        <button type="submit">Add new employee</button>
+    </form>
+    <table class="table">
+        <thead>
+        <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody th:each="employee:${allEmployee}">
+        <tr>
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.age}"></td>
+            <td><a th:href="@{/delete-employee/{id}(id = ${employee.id})}">
+                Delete
+            </a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
+<!--<div th:each="employee:${allEmployee}">-->
+<!--    <span th:text="${employee.name}"></span>-->
+<!--    <span th:text="${employee.age}"></span>-->
+<!--    <a th:href="@{/delete-employee/{id}(id = ${employee.id})}">Delete student</a>-->
+<!--</div>-->
 </body>
 </html>
