@@ -4,12 +4,10 @@ import 'package:http/http.dart' as http;
 void main() async {
   final apiUrl = 'http://localhost:8080/employees';
 
-  // Fetch all employees
   final employees = await fetchEmployees(apiUrl);
   print('All Employees:');
   print(employees);
 
-  // Create a new employee
   final newEmployee = {
     'fullname': 'John Doe',
     'birthday': 123,
